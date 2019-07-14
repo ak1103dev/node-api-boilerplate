@@ -1,0 +1,18 @@
+{
+  "name": "node-mongo-boilerplate",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:ak1103dev/node-mongo-boilerplate.git",
+  "author": "ak1103dev <ak.apichan1103@gmail.com>",
+  "license": "MIT",
+  "private": false,
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^8.0.0",
+    "esm": "^3.2.25",
+    "express": "^4.17.1"
+  },
+  "scripts": {
+    "start": "node ."
+  }
+}
