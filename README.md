@@ -1,1 +1,1 @@
-# node-mongo-boilerplate
+# node-api-boilerplate
