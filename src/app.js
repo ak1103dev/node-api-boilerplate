@@ -10,7 +10,9 @@ app.use(cors())
 app.use(authorization)
 app.use(express.json())
 
-app.get('/', (req, res) => res.send({ message: 'Welcome to API', date: new Date() }))
+app.get('/', (req, res) =>
+  res.send({ message: 'Welcome to API', date: new Date() })
+)
 app.use('/api', routes)
 
 export default app

@@ -6,11 +6,11 @@ export const findById = (req, res) => {
   res.send({})
 }
 
-export const create = (args) => {
+export const create = args => {
   return args
 }
 
-export const update = (args) => {
+export const update = args => {
   return args
 }
 

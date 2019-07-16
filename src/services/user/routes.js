@@ -3,16 +3,22 @@ import { Router } from 'express'
 import validation from '../../middlewares/validation'
 import wrapper from '../../middlewares/wrapper'
 import { me } from '../../middlewares/roleResolver'
+
 import { createUserSchema, updateUserSchema } from './schema'
-import user from '.'
 
-const router = Router();
+import { find, findById, create, update, login, logout } from '.'
 
-router.get('/', user.find)
-router.get('/:id', user.findById)
-router.post('/', validation(createUserSchema), wrapper(user.create, ['email', 'firstName', 'lastName']))
-router.patch('/:id', me, validation(updateUserSchema), wrapper(user.update))
-router.post('/login', user.login)
-router.post('/logout', user.logout)
+const router = Router()
+
+router.get('/', find)
+router.get('/:id', findById)
+router.post(
+  '/',
+  validation(createUserSchema),
+  wrapper(create, ['email', 'firstName', 'lastName'])
+)
+router.patch('/:id', me, validation(updateUserSchema), wrapper(update))
+router.post('/login', login)
+router.post('/logout', logout)
 
 export default router

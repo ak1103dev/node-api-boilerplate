@@ -1,4 +1,4 @@
-export default (func, fields) => async (req, res, next) => {
+export default (func, fields) => async (req, res) => {
   try {
     const result = await func(req.args)
     if (fields) {
@@ -6,7 +6,7 @@ export default (func, fields) => async (req, res, next) => {
         if (!fields.includes(key)) {
           delete result[key]
         }
-      });
+      })
     }
     res.send(result)
   } catch (err) {

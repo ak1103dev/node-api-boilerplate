@@ -1,0 +1,48 @@
+{
+  "extends": [
+    "eslint:recommended",
+    "plugin:import/errors",
+    "plugin:import/warnings"
+  ],
+  "plugins": [
+    "prettier",
+    "import"
+  ],
+  "env": {
+    "es6": true,
+    "browser": true,
+    "node": true,
+    "jest": true
+  },
+  "parserOptions": {
+    "sourceType": "module",
+    "ecmaVersion": 9
+  },
+  "rules": {
+    "prettier/prettier": "error",
+    "lines-between-class-members": ["error", "always"],
+    "no-console": ["error", { "allow": ["warn", "error"] }],
+    "import/order": ["error", {"newlines-between": "always-and-inside-groups"}],
+    "no-useless-rename": ["error", {
+      "ignoreDestructuring": false,
+      "ignoreImport": false,
+      "ignoreExport": false
+    }],
+    "prefer-const": ["error", {
+      "destructuring": "any",
+      "ignoreReadBeforeAssign": true
+    }],
+    "prefer-destructuring": ["error", {
+      "VariableDeclarator": {
+        "array": false,
+        "object": true
+      },
+      "AssignmentExpression": {
+        "array": true,
+        "object": true
+      }
+    }, {
+      "enforceForRenamedProperties": false
+    }]
+  }
+}
