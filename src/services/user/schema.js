@@ -26,3 +26,13 @@ export const updateUserSchema = Joi.object().keys({
     .lowercase()
     .trim(),
 })
+
+export const loginSchema = Joi.object().keys({
+  email: Joi.string()
+    .email()
+    .lowercase()
+    .trim(),
+  password: Joi.string()
+    .min(8)
+    .required(),
+})
