@@ -14,12 +14,14 @@ export const hashPassword = plainPassword => {
 export const verifyPassword = (plainPassword, hashPassword) =>
   bcrypt.compareSync(plainPassword, hashPassword)
 
-export const find = () => {
-  return UserModel.find()
+export const find = async () => {
+  const users = await UserModel.find({}, { password: false })
+  return users
 }
 
-export const findById = args => {
-  return UserModel.findById(args.id)
+export const findById = async args => {
+  const user = await UserModel.findById(args.id, { password: false })
+  return user.toJSON({ virtuals: true })
 }
 
 export const create = async args => {

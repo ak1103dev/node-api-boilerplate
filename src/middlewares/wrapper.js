@@ -10,6 +10,7 @@ export default (func, fields) => async (req, res) => {
     }
     res.send(result)
   } catch (err) {
+    console.error(err)
     res.status(err.code || 500).send({ error: err })
   }
 }

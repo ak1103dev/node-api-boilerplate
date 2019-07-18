@@ -36,3 +36,7 @@ export const loginSchema = Joi.object().keys({
     .min(8)
     .required(),
 })
+
+export const findUserByIdSchema = Joi.object().keys({
+  id: Joi.string(),
+})
